@@ -10,27 +10,28 @@ import UIKit
 
 class SecondViewController: UIViewController {
 
-    @IBOutlet weak var lifeCicleLog: UIScrollView!
+    let name = "Second"
+    let rootViewController = AppDelegate.shared.rootViewController
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        rootViewController.updateLog(name: name, method: #function)
         // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        <#code#>
+        rootViewController.updateLog(name: name, method: #function)
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        <#code#>
+        rootViewController.updateLog(name: name, method: #function)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        <#code#>
+        rootViewController.updateLog(name: name, method: #function)
     }
     
     override func viewDidDisappear(_ animated: Bool) {
-        <#code#>
+        rootViewController.updateLog(name: name, method: #function)
     }
 }

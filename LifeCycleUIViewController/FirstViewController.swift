@@ -10,32 +10,32 @@ import UIKit
 
 class FirstViewController: UIViewController {
     let name = "First"
+    let rootViewController = AppDelegate.shared.rootViewController
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        rootViewController.updateLog(name: name, method: #function)
+    
         // Do any additional setup after loading the view, typically from a nib.
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        <#code#>
+        rootViewController.updateLog(name: name, method: #function)
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        <#code#>
+        rootViewController.updateLog(name: name, method: #function)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        <#code#>
+        rootViewController.updateLog(name: name, method: #function)
     }
     
     override func viewDidDisappear(_ animated: Bool) {
-        <#code#>
+        rootViewController.updateLog(name: name, method: #function)
     }
 
-    func update(name: String, method: String) {
-        let displayController = tabBarController?.viewControllers![1] as? SecondViewController?
-        displayController??.lifeCicleLog.
-    }
+   
 }
 
