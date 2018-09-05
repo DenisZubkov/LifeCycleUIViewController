@@ -15,13 +15,19 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        logTextView.isEditable = false
+        logTextView.isSelectable = false
         logTextView.text = ""
         // Do any additional setup after loading the view.
     }
     
     func updateLog(name: String, method: String) {
         if let existingText = logTextView.text {
-            logTextView.text = "\(existingText) Controller \(name): \(method)\n"
+            let date = Date()
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "dd.MM.yyyy hh:mm:ss"
+            let dateString = dateFormatter.string(from: date)
+            logTextView.text = "\(existingText) \(dateString) Controller \(name): \(method)\n"
             let range = NSMakeRange(logTextView.text.count - 1, 1);
             logTextView.scrollRangeToVisible(range);
         }
